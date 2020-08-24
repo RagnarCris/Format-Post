@@ -3,7 +3,7 @@ import sys
 
 def conserta_arquivo(filename):
 
-    resultfile = 'result_post.txt'
+    resultfile = ''
 
     file = open(filename, 'r')
 
@@ -19,7 +19,8 @@ def conserta_arquivo(filename):
         teste = aux.split(' [ ')
         partes.remove(partes[0])
         partes.insert(0, teste[1])
-        partes.insert(0, teste[0])
+        #partes.insert(0, teste[0])
+        resultfile = teste[0] + '_new_post.txt'
         aux = partes[-1]
         partes.pop(-1)
         xua = aux.split(' ]')
@@ -41,8 +42,10 @@ if __name__ == "__main__":
         print("Falta-lhe argumentos meu caro, voce pode colocar apenas o arquivo de entrada, ou o arquivo de entrada e saida, para o caso de nao querer visualizar no terminal.")
     else:       
         conserta_arquivo(sys.argv[1])
+        '''
         if len(sys.argv) == 2:
             roda_int2sym(sys.argv[1])        
         if len(sys.argv) == 3:
             print("O arquivo de saida sera: %s"%(sys.argv[2]))
             roda_int2sym(sys.argv[1], sys.argv[2])
+        '''
