@@ -30,6 +30,8 @@ def conserta_arquivo(filename):
     with open(resultfile, 'w+') as filehandle:
         filehandle.writelines("%s\n" % newline for newline in newlines)
 
+    return resultfile
+
 def roda_int2sym(filename, saida=''):
     if saida != '':
         comando = 'int2sym.pl -f 1 data/grammar/lang/words.txt ' + filename + ' > ' + saida
@@ -41,11 +43,10 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Falta-lhe argumentos meu caro, voce pode colocar apenas o arquivo de entrada, ou o arquivo de entrada e saida, para o caso de nao querer visualizar no terminal.")
     else:       
-        conserta_arquivo(sys.argv[1])
-        '''
+        file = conserta_arquivo(sys.argv[1])
+        
         if len(sys.argv) == 2:
-            roda_int2sym(sys.argv[1])        
+            roda_int2sym(file)        
         if len(sys.argv) == 3:
             print("O arquivo de saida sera: %s"%(sys.argv[2]))
-            roda_int2sym(sys.argv[1], sys.argv[2])
-        '''
+            roda_int2sym(file, sys.argv[2])
