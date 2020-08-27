@@ -44,9 +44,10 @@ if __name__ == "__main__":
         print("Falta-lhe argumentos meu caro, voce pode colocar apenas o arquivo de entrada, ou o arquivo de entrada e saida, para o caso de nao querer visualizar no terminal.")
     else:       
         file = conserta_arquivo(sys.argv[1])
-        
+        '''
         if len(sys.argv) == 2:
             roda_int2sym(file)        
         if len(sys.argv) == 3:
             print("O arquivo de saida sera: %s"%(sys.argv[2]))
             roda_int2sym(file, sys.argv[2])
+        '''
