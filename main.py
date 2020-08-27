@@ -27,8 +27,8 @@ def conserta_arquivo(filename):
         partes.append(xua[0])
         newlines = partes
 
-    with open(resultfile, 'w+') as filehandle:
-        filehandle.writelines("%s\n" % newline for newline in newlines)
+        with open(resultfile, 'w+') as filehandle:
+            filehandle.writelines("%s\n" % newline for newline in newlines)
 
     return resultfile
 
